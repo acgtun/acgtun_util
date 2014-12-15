@@ -1,4 +1,4 @@
 acgtun_util
 ===========
 
-basic function for global use
+basic functions for global use

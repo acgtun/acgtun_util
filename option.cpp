@@ -1,3 +1,5 @@
+/* The detail description of each function please refer to head file */
+
 #include "option.hpp"
 #include <time.h>
 

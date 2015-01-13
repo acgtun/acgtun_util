@@ -3,7 +3,7 @@
 
 #include <string>
 
-using namespace std;
+using std::string;
 
 /*
  A0
@@ -64,7 +64,7 @@ const int BLOSUM62[][20] = {
 /* Given a 6-mer amino acids sequence, translate it to a integer number.
  * Use 20-based number, A is 0, R is 1, N is 3 and so on.
  * */
-inline uint32_t GetHashValueAA(const char * seed) {
+inline uint32_t GetHashValueAA(const string& seed) {
   usint32_t hash_value = 0;
   for (usint32_t i = 0; i < HASHLEN; i++) {
     hash_value += base_preCal[base[seed[i] - 'A']][i];

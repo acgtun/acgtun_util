@@ -13,17 +13,14 @@
 
 #define MAX_LINE_LEN 6000
 
-typedef uint64_t usint64_t;
-typedef uint32_t usint32_t;
-
-inline void MemoryAllocateCheck(void * pointer, const char * file, int line) {
+inline void MemoryAllocateCheck(void* pointer, const char* file, int line) {
   if (pointer == NULL) {
     printf("Memory allocate error in %s at line %d\n", file, line);
     exit (EXIT_FAILURE);
   }
 }
 
-inline void FileOpenCheck(FILE * pfile, const char * file, int line) {
+inline void FileOpenCheck(FILE* pfile, const char* file, int line) {
   if (pfile == NULL) {
     printf("File open error in %s at line %d\n", file, line);
     exit (EXIT_FAILURE);
@@ -36,7 +33,7 @@ inline void FileOpenCheck(FILE * pfile, const char * file, int line) {
 #define MEMORY_ALLOCATE_CHECK(pointer)  (MemoryAllocateCheck(pointer, __FILE__, __LINE__))
 
 #define FREAD_CHECK(func, size) { \
-	usint32_t s = func; \
+	uint32_t s = func; \
 	if(s != size) { \
 		printf("read file error. --- %s:%s:%d\n", __FILE__, __func__, __LINE__); \
 		exit(EXIT_FAILURE); \
@@ -62,10 +59,10 @@ inline void INFO(const char* msg) {
 inline void INFO(const char* msg, const char* val) {
   printf("--INFO-- %s %s\n", msg, val);
 }
-inline void INFO(const char* msg, const usint64_t &val) {
+inline void INFO(const char* msg, const uint64_t &val) {
   printf("--INFO-- %s %" PRIu64 "\n", msg, val);
 }
-inline void INFO(const char* msg, const usint32_t &val) {
+inline void INFO(const char* msg, const uint32_t &val) {
   printf("--INFO-- %s" "%" PRIu32 "\n", msg, val);
 }
 inline void INFO(const char* msg, const int &val) {
@@ -74,10 +71,10 @@ inline void INFO(const char* msg, const int &val) {
 inline void INFO(const char* msg, const double &val) {
   printf("--INFO-- %s %lf\n", msg, val);
 }
-inline void INFO(const char* msg, const usint32_t & val1, const char* val2) {
+inline void INFO(const char* msg, const uint32_t & val1, const char* val2) {
   printf("--INFO-- %s" "%" PRIu32 " %s\n", msg, val1, val2);
 }
-inline void INFO(const char* msg, const usint64_t & val1, const char* val2) {
+inline void INFO(const char* msg, const uint64_t & val1, const char* val2) {
   printf("--INFO-- %s" "%" PRIu64 " %s\n", msg, val1, val2);
 }
 
